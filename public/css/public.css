@@ -1,0 +1,144 @@
+/*--------------------------------------------------------------
+# Boton de soporte
+--------------------------------------------------------------*/
+.qcsupport_button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 99999;
+  width: 160px;
+  height: 160px;
+   
+}
+.qc-wheel {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 160px;
+  height: 160px;
+  transition: all 0.3s ease;
+  transform-origin: bottom right;
+  transform: scale(0);
+  z-index: 99998;
+   
+}
+.qc-checkbox {
+  display: none;
+}
+.qc {
+ --Primario: #4A85FE;
+ --Primario-claro: #6595FF;
+ --Primario-oscuro:#2C6EFE ;
+ position: fixed;
+ bottom: 15px;
+ right: 15px;
+ width: 60px;
+ height: 60px;
+ border-radius: 50%;
+ box-shadow: 0 5px 26px 0 rgba(68, 88, 144, 0.14); 
+ transition: all 0.3s ease;
+ z-index: 99;
+ border-bottom-right-radius: 6px;
+ background: var(--Primario);
+ background: -moz-linear-gradient(45deg, var(--Primario) 0%, var(--Primario-claro) 100%); /* FF3.6-15 */
+ background: -webkit-linear-gradient(45deg, var(--Primario)0%,var(--Primario-claro) 100%); /* Chrome10-25,Safari5.1-6 */
+ background: linear-gradient(45deg, var(--Primario) 0%,var(--Primario-claro) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+ text-decoration: none;
+ color: #fff;
+ font-weight: bold; 
+ z-index: 99999;
+
+}
+
+.qc:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+
+}
+.qc-checkbox:checked ~ .qc:before {
+  width: 90%;
+  height: 90%;
+  left: 5%;
+  top: 5%;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.qc:hover {
+ cursor: pointer;
+ background-color: rgba(255, 255, 255, 0.2);
+}
+
+.gicon-soporte {
+  position: absolute;
+  font-size: 2.3rem;
+  color: #fff;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) rotate(0deg);
+
+}
+
+
+
+.qc-checkbox:checked ~ .qc-wheel {
+  transform: scale(1);
+}
+.qc-action {
+  --Primario: #4A85FE;
+  --Primario-claro: #6595FF;
+  --Primario-oscuro:#2C6EFE ;
+  position: absolute;
+  background: var(--Primario);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 5px 26px 0 rgba(68, 88, 144, 0.14);
+  transition: all 1s ease;
+  opacity: 0;
+   text-decoration: none;
+}
+
+.qc-checkbox:checked ~ .qc-wheel .qc-action {
+  opacity: 1;
+  transition: all .5s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.qc-action:hover {
+  --Primario: #4A85FE;
+  --Primario-claro: #6595FF;
+  --Primario-oscuro:#2C6EFE ;
+  background-color: var(--Primario-oscuro);
+  color: #fff;
+  text-decoration: none;
+}
+
+.qc-wheel .qc-action-1 {
+  left: -25px;
+  bottom: 0;
+}
+
+.qc-wheel .qc-action-2 {
+  right: 62px;
+  top: 0px;
+}
+.qc-wheel .qc-action-3 {
+  left: 0px;
+  top: 48px;
+}
+.qc-wheel .qc-action-4 {
+ right: 0px;
+  top: -25px;
+}
+
+ 

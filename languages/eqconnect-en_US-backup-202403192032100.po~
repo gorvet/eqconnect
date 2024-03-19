@@ -1,0 +1,196 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Easy Quick Connect\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-19 19:53+0000\n"
+"PO-Revision-Date: 2024-03-19 20:31+0000\n"
+"Last-Translator: \n"
+"Language-Team: English (United States)\n"
+"Language: en_US\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.7; wp-6.4.3\n"
+"X-Domain: eqconnect"
+
+#: admin/templates/tap1-template.php:52 admin/templates/tap2-template.php:52
+#: admin/templates/tap3-template.php:52 admin/templates/tap4-template.php:52
+msgid "\"https://www.esteesmilink.com\""
+msgstr "\"https://www.thisismylink.com\""
+
+#: admin/templates/tap1-template.php:53 admin/templates/tap2-template.php:53
+#: admin/templates/tap3-template.php:53 admin/templates/tap4-template.php:53
+msgid "\"micorreo@ejemplo.com\""
+msgstr "\"myemail@xample.com\""
+
+#: admin/templates/tap6-template.php:6
+msgid "*Nota:"
+msgstr "*Note:"
+
+#: admin/templates/tap1-template.php:6 admin/templates/tap2-template.php:6
+#: admin/templates/tap3-template.php:6 admin/templates/tap4-template.php:6
+msgid "*Nota: "
+msgstr "*Note:"
+
+#: admin/templates/side-template.php:48
+msgid "Agradecemos su contribución para seguir desarrollando este plugin:"
+msgstr "We appreciate your contribution to further develop this plugin:"
+
+#: admin/templates/tap6-template.php:5
+msgid "Ajuste lo colores a tu Identidad Visual."
+msgstr "Adjust the colors to your Visual Identity."
+
+#: admin/templates/side-template.php:39
+msgid "Cancelar"
+msgstr "Cancel"
+
+#: admin/templates/tap1-template.php:54 admin/templates/tap2-template.php:54
+#: admin/templates/tap3-template.php:54 admin/templates/tap4-template.php:54
+msgid ""
+"Colocar el número de teléfono con el código del país delante sin el signo "
+"\"+\" ej: 5353000000"
+msgstr ""
+"Place the telephone number with the country code in front without the \"+\" "
+"sign, ex: 5353000000"
+
+#: admin/templates/header-template.php:19
+msgid ""
+"Comencemos a configurarlo para su mejor funcionamiento. No te olvides de "
+"guardar los cambios al finalizar ;-)"
+msgstr ""
+"Let's start configuring it for its best performance. Don't forget to save "
+"your changes when you're done ;-)"
+
+#: admin/templates/tap1-template.php:53 admin/templates/tap2-template.php:53
+#: admin/templates/tap3-template.php:53 admin/templates/tap4-template.php:53
+msgid "Correo:"
+msgstr "eMail:"
+
+#. Name of the plugin
+msgid "Easy Quick Connect"
+msgstr ""
+
+#: admin/templates/side-template.php:40
+msgid "Enviar"
+msgstr "Send"
+
+#: admin/eqcn_admin.php:11 admin/eqcn_admin.php:12
+msgid "EQConnect"
+msgstr "EQConnect"
+
+#: admin/templates/side-template.php:50
+msgid "Escanee el código para donar desde Cuba por TransferMóvil (CUP)"
+msgstr "Scan the code to donate from Cuba by TransferMóvil (CUP)"
+
+#: admin/templates/side-template.php:56
+msgid "Escanee el código para donar desde Cuba por TransferMóvil (MLC)"
+msgstr "Scan the code to donate from Cuba by TransferMóvil (MLC)"
+
+#: admin/templates/tap6-template.php:6
+msgid "Este color será usado en la burbuja flotante y los CTAs."
+msgstr "This color will be used in the floating bubble and CTAs."
+
+#: admin/templates/side-template.php:34
+msgid ""
+"Estoy de acuerdo en que, rellenando el formulario de contacto con mis datos, "
+"autorizo a Easy Quick Connect a usar mi correo para responder a mis "
+"solicitudes de información."
+msgstr ""
+"I agree that by filling out the contact form with my data, I authorize Easy "
+"Quick Connect to use my email to respond to my requests for information."
+
+#: admin/templates/header-template.php:19
+msgid "Gracias por usar"
+msgstr "Thanks for using"
+
+#: admin/templates/tap1-template.php:46 admin/templates/tap2-template.php:46
+#: admin/templates/tap3-template.php:46 admin/templates/tap4-template.php:46
+msgid "Hola quiero saber..."
+msgstr "Hi I would like to know..."
+
+#: admin/templates/side-template.php:64
+msgid "Hola ¿Cómo puedo hacerte una donación?"
+msgstr "Hello, how can I make a donation to you?"
+
+#. Author URI of the plugin
+msgid "https://www.gorvet.com"
+msgstr "https://www.gorvet.com"
+
+#. URI of the plugin
+msgid ""
+"https://www.gorvet.com/aumenta-la-interaccion-en-tu-web-con-easy-quick-"
+"connect/"
+msgstr ""
+"https://www.gorvet.com/aumenta-la-interaccion-en-tu-web-con-easy-quick-"
+"connect/"
+
+#: admin/templates/tap1-template.php:14 admin/templates/tap2-template.php:14
+#: admin/templates/tap3-template.php:14 admin/templates/tap4-template.php:14
+msgid "Icono"
+msgstr "Icon"
+
+#. Author of the plugin
+msgid "Juank de Gorvet"
+msgstr "Juank de Gorvet"
+
+#: admin/templates/side-template.php:12
+msgid "Necesito ayuda con este plugin"
+msgstr "I need help with this plugin"
+
+#. Description of the plugin
+msgid ""
+"Ofrece a tus visitantes hasta 4 formas de contacto personalizables, "
+"convirtiendo tus visitas en oportunidades. ¡Aumenta la interacción con esta "
+"burbuja flotante de contacto!"
+msgstr ""
+"Offer your visitors up to 4 customizable contact forms, turning your visits "
+"into opportunities. Increase interaction with this floating contact bubble!"
+
+#: admin/templates/side-template.php:17
+msgid "Quiero hacer una donación a los desarrolladores"
+msgstr "I want to make a donation to the developers"
+
+#: admin/templates/tap1-template.php:5 admin/templates/tap2-template.php:5
+#: admin/templates/tap3-template.php:5 admin/templates/tap4-template.php:5
+msgid ""
+"Seleccione el icono de la llamada de acción y añada su link correspondiente."
+msgstr "Select the call to action icon and add its corresponding link."
+
+#: admin/templates/tap1-template.php:9 admin/templates/tap2-template.php:9
+#: admin/templates/tap3-template.php:9 admin/templates/tap4-template.php:9
+msgid "Seleccione el icono e introduzca el link del CTA. "
+msgstr "Select the icon and enter the CTA link."
+
+#: admin/templates/tap1-template.php:6 admin/templates/tap2-template.php:6
+#: admin/templates/tap3-template.php:6 admin/templates/tap4-template.php:6
+msgid "Si no se intruduce el link no se mostrará su burbuja."
+msgstr "If the link is not entered, its bubble will not be displayed."
+
+#: admin/templates/tap1-template.php:54 admin/templates/tap2-template.php:54
+#: admin/templates/tap3-template.php:54 admin/templates/tap4-template.php:54
+msgid "Teléfono y WhatsApp:"
+msgstr "Phone and WhatsApp:"
+
+#: admin/templates/side-template.php:7
+msgid "Tengo ideas para mejorar este plugin"
+msgstr "I have ideas to improve this plugin"
+
+#: admin/templates/tap1-template.php:45 admin/templates/tap2-template.php:45
+#: admin/templates/tap3-template.php:45 admin/templates/tap4-template.php:45
+msgid "Texto del CTA"
+msgstr "CTA text"
+
+#: admin/templates/tap1-template.php:51 admin/templates/tap2-template.php:51
+#: admin/templates/tap3-template.php:51 admin/templates/tap4-template.php:51
+msgid "Usa estos ejemplos como referencia para crear tus enlaces: "
+msgstr "Use these examples as a reference to create your links:"
+
+#: admin/templates/side-template.php:64
+msgid "Usar otro método"
+msgstr "Use another method"
+
+#: admin/templates/side-template.php:3
+msgid "¿Cómo podemos ayudarte?"
+msgstr "how can we help you?"

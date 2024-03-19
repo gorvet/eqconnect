@@ -21,10 +21,10 @@
 
 	<form  role="form" method="POST"    class="feedback-form hidden simple_form form form-vertical" id="eqcn_sendmail"  method="POST" name="feedback">
 		<div class=" ">
-			<input placeholder="Nombre" type="text"  name="subscriber_name" id="subscriber_name" required  class="field">
+			<input placeholder="<?php esc_html_e('Nombre','eqconnect'); ?>" type="text"  name="subscriber_name" id="subscriber_name" required  class="field">
 		</div>
 		<div class=" ">
-			<input placeholder="Correo electrónico" type="email" name="subscriber_email" id="subscriber_email"   required   class="field">
+			<input placeholder="<?php esc_html_e('Correo','eqconnect'); ?>" type="email" name="subscriber_email" id="subscriber_email"   required   class="field">
 		</div>
 		<div class=" ">
 			<textarea rows="3" id="subscriber_message" name="subscriber_message" class="field"   required minlength="20"></textarea>
@@ -45,7 +45,7 @@
 	</form>
 
 	<div class="feedback-donate hidden" id="feedback-donate">
-		<span><?php esc_html_e('Agradecemos su contribución para seguir desarrollando este plugin:','eqconnect'); ?></span>
+		<h3><?php esc_html_e('Agradecemos su contribución para seguir desarrollando este plugin:','eqconnect'); ?></h3>
 		<div class="center my-2">
 			<span><strong><?php esc_html_e('Escanee el código para donar desde Cuba por TransferMóvil (CUP)','eqconnect'); ?></strong></span>
 		</div>

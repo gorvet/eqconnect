@@ -12,7 +12,7 @@
 			<input type="text" name="eqcn_primario" id="eqcn_primario" class="eqcn_primario" data-default-color="#4A85FE"   
 			value="<?php 
 			if (esc_attr(get_option('eqcn_primario')))
-			{ echo esc_attr(get_option('eqcn_primario'));}
+			{ echo sanitize_hex_color(esc_attr(get_option('eqcn_primario')));}
 			else{ echo '#4A85FE';}  ?>"/>
 
 		</div>

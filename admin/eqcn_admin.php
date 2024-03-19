@@ -137,4 +137,6 @@ add_action('admin_menu', 'eqcn_admin_setup');
 // Agregar los scripts y css
 add_action( 'admin_enqueue_scripts', 'eqcn_admin_scripts' );
 
+
+
  

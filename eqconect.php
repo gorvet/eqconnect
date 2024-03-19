@@ -29,3 +29,11 @@ define( 'EQCONNECT_PLUGIN_FILE', __FILE__ );
 require_once EQCONNECT_DIR . 'admin/eqcn_admin.php';
 require_once EQCONNECT_DIR . 'public/eqcn_public.php'; 
 require_once EQCONNECT_DIR . 'include/sendmail/sendmail.php';
+
+
+function eqcn_load_lang() {
+    load_plugin_textdomain( 'eqconnect', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' ); 
+}
+add_action( 'init', 'eqcn_load_lang' );
+
+ 

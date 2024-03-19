@@ -1,6 +1,7 @@
 <?php defined( 'ABSPATH' ) || die(); ?>
 <?php
 $cta_options = array(//nonbre de los iconos en mi tipografia de iconos
+	'chat2'=>'&#xe92d;',
 	'mail'=>'&#xe921;',
 	'phone'=>'&#xe922;',
 	'link'=>'&#xe97e;',

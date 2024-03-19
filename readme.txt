@@ -2,7 +2,7 @@
 Contributors: jgorvet 
 Donate link: https://www.gorvet.com/
 Tags: Tags: chat, click to chat, support button, float contact, WhatsApp, Telegram, phone, email
-Requires at least:5.6
+Requires at least:6
 Tested up to: 6.4.2
 Stable tag: 1.2
 Requires PHP: 8.0

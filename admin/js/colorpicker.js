@@ -9,7 +9,7 @@ jQuery(document).ready(function($){
         'background': 'linear-gradient(45deg, ' + primario + ' 0%,' + primarioClaro + ' 100%)'
     });
 
-    $('#eqcprimario').wpColorPicker({
+    $('#qcprimario').wpColorPicker({
     defaultColor: true, 
     hide: true,
     change:function(event, ui) {

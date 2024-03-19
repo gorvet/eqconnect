@@ -18,11 +18,14 @@
  */
 
 defined( 'ABSPATH' ) || die();
+ 
 
 define( 'EQCONNECT_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'EQCONNECT_DIR', plugin_dir_path( __FILE__ ) );
 define( 'EQCONNECT_PLUGIN_FILE', __FILE__ );
 
-require_once EQCONNECT_DIR . 'admin/eqconnect-admin.php';
-require_once EQCONNECT_DIR . 'public/eqconnect-public.php'; 
- 
+
+
+require_once EQCONNECT_DIR . 'admin/eqcn_admin.php';
+require_once EQCONNECT_DIR . 'public/eqcn_public.php'; 
+//require_once EQCONNECT_DIR . 'include/sendmail/sendmail.php';

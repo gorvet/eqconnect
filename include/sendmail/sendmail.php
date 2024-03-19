@@ -1,3 +1,4 @@
+<?php defined( 'ABSPATH' ) || die(); ?>
 <?php
 require_once('../../../../../wp-load.php');
 function validar_campos($campo)

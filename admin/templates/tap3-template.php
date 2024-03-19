@@ -1,18 +1,19 @@
+<?php defined( 'ABSPATH' ) || die(); ?>
 <!-- Tap 3  -->
-<div id="tab3" class="tab-pane active"> 	
+<div id="tab3" class="tab-pane hide"> 	
 	<div class=""> 
-		<p class="mb-1 mt-0">Seleccione el icono de la llamada de acción y añada su link correspondiente.</p> 
-		<p class="mb-1 mt-0"><span class="fw-bold">*Nota: </span>Si no se intruduce el link no se mostrará su burbuja.</p>  
+		<p class="mb-1 mt-0"><?php esc_html_e('Seleccione el icono de la llamada de acción y añada su link correspondiente.','eqconnect'); ?></p> 
+		<p class="mb-1 mt-0"><span class="fw-bold"><?php esc_html_e('*Nota: ','eqconnect'); ?> </span><?php esc_html_e('Si no se intruduce el link no se mostrará su burbuja.','eqconnect'); ?></p>  
 	</div>
 	<div class="mt-2">
-		<label class="d-block fw-bold">Seleccione el icono e introduzca el link del CTA. </label>		 
+		<label class="d-block fw-bold"><?php esc_html_e('Seleccione el icono e introduzca el link del CTA. ','eqconnect'); ?> </label>		 
 
 		<div class="mt-1 d-flex">
 			<div class="dropdown">
 				<button class="bbutton button-secondary dropdown-toggle" type="button" id="dropdownMenu3" data-bs-toggle="dropdown" aria-expanded="false">
-					<?php _e('Icono', 'eqconnect'); ?>
-					<i id="giconCta3" class="mx-2 <?php if (get_option('eqconnect_icocta3')): echo "gicon-" . get_option('eqconnect_icocta3')?>
-					<?php else:  echo "gicon-chat2"?>
+					<?php esc_html_e('Icono', 'qconnect'); ?>
+					<i id="giconCta3" class="mx-2 gicon-<?php if (get_option('eqcn_icocta3')): echo esc_attr(get_option('eqcn_icocta3'))?>
+					<?php else:  echo "chat2"?>
 					<?php endif ?>
 					"></i>
 					<span class="caret"></span>
@@ -21,36 +22,38 @@
 				
 				<ul id="selectIcon3" class="dropdown-menu" aria-labelledby="dropdownMenu3">
 					<?php
-					foreach ($cta_options as $value => $unicode) {
-						$option = '<li><a class="dropdown-item" href="#" value="' . $value . '" ><i class="gicon-'.$value .'"></i></a></li>';
-						echo $option;
+					foreach ($cta_options as $value => $unicode) {?>
+						<li>
+							<a class="dropdown-item" href="#" value="<?php esc_attr_e($value) ?>">
+						<i class="gicon-<?php esc_attr_e($value)  ?>"></i>
+							</a>
+						</li>
+						<?php
 					}
 					?>
 				</ul>
 			</div>
 
-			<input  class="" type="hidden"  name="eqconnect_icocta3" id="eqconnect_icocta3" value="<?php echo esc_attr(get_option('eqconnect_icocta3'))  ?> ">
+			<input  class="" type="hidden"  name="eqcn_icocta3" id="eqcn_icocta3" value="<?php echo esc_attr(get_option('eqcn_icocta3'))  ?> ">
 
 
-			<input  class="ms-2 w-100" type="text"  name="eqconnect_linkcta3" id="eqconnect_linkcta3" value="<?php echo esc_attr(get_option('eqconnect_linkcta3'))  ?>" placeholder="https://link.com">
+			<input  class="ms-2 w-100" type="text"  name="eqcn_linkcta3" id="eqcn_linkcta3" value="<?php echo esc_attr(get_option('eqcn_linkcta3'))  ?>" placeholder="https://link.com">
 
 		</div>
 		
-		<div id="eqconnect_wa3" class="my-2  ">
-			<label class="fw-bold">Texto del CTA</label>
-			<input  class=" w-100 mt-1 " type="text"  name="eqconnect_watext3" id="eqconnect_watext3" value="<?php echo esc_attr(get_option('eqconnect_watext3'))  ?>" placeholder="Hola quiero saber...">
+		<div id="eqcn_wa3" class="my-2  ">
+			<label class="fw-bold d-none"><?php esc_html_e('Texto del CTA','eqconnect'); ?></label>
+			<input  class=" w-100 mt-1 " type="hidden"  name="eqcn_watext3" id="eqcn_watext3" value="<?php echo esc_attr(get_option('eqcn_watext3'))  ?>" placeholder="<?php esc_html_e('Hola quiero saber...','eqconnect'); ?>">
 		</div>
 	</div>
 
 	<div class="mt-4"> 
-		<span>Usa estos ejemplos como referencia para crear tus enlaces:</span><br>
-		<span><strong>Link: </strong>"https://www.esteesmilink.com"</span><br>
-		<span><strong>Correo: </strong>"micorreo@ejemplo.com"</span><br> 
-		<span><strong>Teléfono y WhatsApp: </strong>Colocar el número de teléfono con el código del país delante sin el signo "+" ej: 5353000000</span> 
-		
-
+		<span><?php esc_html_e('Usa estos ejemplos como referencia para crear tus enlaces: ','eqconnect'); ?></span><br>
+		<span><strong>Link: </strong><?php esc_html_e('"https://www.esteesmilink.com"','eqconnect'); ?></span><br>
+		<span><strong><?php esc_html_e('Correo:','eqconnect'); ?></strong> <?php esc_html_e('"micorreo@ejemplo.com"','eqconnect'); ?></span><br> 
+		<span><strong><?php esc_html_e('Teléfono y WhatsApp:','eqconnect'); ?></strong> <?php esc_html_e('Colocar el número de teléfono con el código del país delante sin el signo "+" ej: 5353000000','eqconnect'); ?></span> 
+	
 	</div>
-
 
 </div>
 <!-- Tap 3  -->

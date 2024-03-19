@@ -1,3 +1,4 @@
+<?php defined( 'ABSPATH' ) || die(); ?>
 <div  class="contact-container">
 	<h2>¿Cómo podemos ayudarte?</h2>  
 	<ul class="feedback-types">
@@ -18,7 +19,7 @@
 		</li>
 	</ul>
 
-	<form  role="form" method="POST" action="<?php echo esc_url (EQCONNECT_PLUGIN_URL.'/include/sendmail/sendmail.php' ) ?>"   class="feedback-form hidden simple_form form form-vertical" id="qcsendmail"  method="POST" name="feedback">
+	<form  role="form" method="POST" action="<?php echo esc_url (QCONNECT_PLUGIN_URL.'/include/sendmail/sendmail.php' ) ?>"   class="feedback-form hidden simple_form form form-vertical" id="qcsendmail"  method="POST" name="feedback">
 		<div class=" ">
 			<input placeholder="Nombre" type="text"  name="subscriber_name" id="subscriber_name" required  class="field">
 		</div>
@@ -49,13 +50,13 @@
 			<span><strong>Escanee el código para donar desde Cuba por TransferMóvil (CUP)</strong></span>
 		</div>
 		<div class="center">
-			<img  class="donate"  src=" <?php echo esc_url (EQCONNECT_PLUGIN_URL . '/admin/img/donatecup.png' ) ?>">
+			<img  class="donate"  src=" <?php echo esc_url (QCONNECT_PLUGIN_URL . '/admin/img/donatecup.png' ) ?>">
 		</div>
 		<div class="center mt-2">
 			<span><strong>Escanee el código para donar desde Cuba por TransferMóvil (MLC)</strong></span>
 		</div>
 		<div class="center">
-			<img  class="donate"  src=" <?php echo esc_url (EQCONNECT_PLUGIN_URL . '/admin/img/donatemlc.png' ) ?>">
+			<img  class="donate"  src=" <?php echo esc_url (QCONNECT_PLUGIN_URL . '/admin/img/donatemlc.png' ) ?>">
 		</div>
 		 
 		 

@@ -23,8 +23,8 @@ jQuery(document).ready(function($){
 		// Cuando se selecciona un fichero, captura la URL y asígnala al input
 		meta_gallery_frame.on('select', function() {
 			attachment = meta_gallery_frame.state().get('selection').first().toJSON();
-			$('#eqconnect_ico_url').val(attachment.url);
-				$( '#eqconnect_ico' ).attr('src', attachment.url);
+			$('#qconnect_ico_url').val(attachment.url);
+				$( '#qconnect_ico' ).attr('src', attachment.url);
 		});
 		// Abre la modal con el frame 
 		meta_gallery_frame.open();
@@ -35,9 +35,9 @@ jQuery(document).ready(function($){
 		// Elimina los ids del input.
 		/*$( '#mybchat-ico-url' ).val( '' ).trigger( 'change' );*/
 		// Elimina las miniaturas.
-		$( '#eqconnect_ico_url' ).attr('value', jsmpurl + '/admin/img/qconnect.png');
-		$( '#eqconnect_ico' ).attr('src', jsmpurl + '/admin/img/qconnect.png');
-		$('#eqconnect_ico_url').val(" ");
+		$( '#qconnect_ico_url' ).attr('value', jsmpurl + '/admin/img/qconnect.png');
+		$( '#qconnect_ico' ).attr('src', jsmpurl + '/admin/img/qconnect.png');
+		$('#qconnect_ico_url').val(" ");
 		return;
 	});
 

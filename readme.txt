@@ -1,4 +1,4 @@
-=== Easy QuickConnect ===
+=== Easy Quick Connect ===
 Contributors: jgorvet 
 Donate link: https://www.gorvet.com/
 Tags: Tags: chat, click to chat, support button, float contact, WhatsApp, Telegram, phone, email

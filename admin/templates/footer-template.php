@@ -1,4 +1,4 @@
-
+<?php defined( 'ABSPATH' ) || die(); ?>
 </div> 	
 <?php 
 settings_fields('eqconnect');

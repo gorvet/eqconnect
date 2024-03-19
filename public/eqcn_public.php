@@ -4,8 +4,7 @@
 
 defined( 'ABSPATH' ) || die();
 
-function add_eqconnect_code()
-{ 
+function eqcn_front_code() { 
 
 // Obtener las opciones de configuración guardadas
 
@@ -13,21 +12,21 @@ function add_eqconnect_code()
     $icons;
     $watexts;
     for ($i=1; $i < 5 ; $i++) { 
-        $link=get_option('eqconnect_linkcta'.$i);
+        $link=esc_attr(get_option('eqcn_linkcta'.$i));
         if ($link!='') {
-         $links[]=$link;
-         if (get_option('eqconnect_icocta'.$i)!='') {
-             $icons[]=get_option('eqconnect_icocta'.$i);
-         }
-         else{$icons[]='link';}
+           $links[]=$link;
+           if (esc_attr(get_option('eqcn_icocta'.$i))!='') {
+               $icons[]=esc_attr(get_option('eqcn_icocta'.$i));
+           }
+           else{$icons[]='link';}
 
-         $watext=get_option('eqconnect_watext'.$i);
-         $watext = str_replace(' ', '%20', $watext);
-         $watexts[]=$watext;   
-     }
- }
- 
- if (isset($links)): ?>
+           $watext=esc_attr(get_option('eqcn_watext'.$i));
+           $watext = str_replace(' ', '%20', $watext);
+           $watexts[]=$watext;   
+       }
+   }
+
+   if ($links): ?>
 
     <div class="qcsupport_button">
         <input id="qcCheckbox" type="checkbox" class="qc-checkbox" />
@@ -39,7 +38,7 @@ function add_eqconnect_code()
 
             <?php 
             for ($i=0; $i < count($links)  ; $i++) { 
-             if ($links[$i]): 
+               if ($links[$i]): 
 
                 if ($icons[$i]=='phone'){
                     $href="tel:".$links[$i];
@@ -52,11 +51,9 @@ function add_eqconnect_code()
                     
                 }
                 else {$href=$links[$i];}
-
                 ?>
-                
-                <a class="qc-action qc-action-<?php echo $i+1; ?>" href="<?php echo $href; ?>">
-                    <i class="gicon-<?php echo $icons[$i]; ?>"></i>
+                <a class="qc-action qc-action-<?php echo esc_html($i+1); ?>" href="<?php echo esc_html($href); ?>" target="_blanc">
+                    <i class="gicon-<?php echo esc_html($icons[$i]); ?>"></i>
                 </a>
             <?php endif ; 
         }
@@ -69,66 +66,66 @@ function add_eqconnect_code()
 
 
 // Inyectamos el código en el footer
-add_action('wp_footer', 'add_eqconnect_code');
+add_action('wp_footer', 'eqcn_front_code');
 
 
 // personalizamos la burbuja
-function eqconnect_customize_css()
+function eqcn_customize_css()
 {
-    $primario = get_option('qcprimario');
-    $primarioClaro = obtenerColorMasClaro($primario,0.6);
+    $primario = esc_attr(get_option('qcprimario'));
+    $primarioClaro = eqcn_obtenerColorMasClaro($primario,0.6);
     
-    $primarioOscuro = obtenerColorMasOscuro($primario,0.2);
+    $primarioOscuro = eqcn_obtenerColorMasOscuro($primario,0.2);
 
     ?>
     <style type="text/css">
     .qc {
-       --Primario: <?php echo $primario; ?>;
-       --Primario-claro: <?php echo $primarioClaro; ?>;
-       --Primario-oscuro:<?php echo $primarioOscuro; ?>;
+     --Primario: <?php echo esc_html($primario); ?>;
+     --Primario-claro: <?php echo esc_html($primarioClaro); ?>;
+     --Primario-oscuro:<?php echo esc_html($primarioOscuro); ?>;
 
-       background: var(--Primario);
-       background: -moz-linear-gradient(45deg, var(--Primario) 0%, var(--Primario-claro) 100%); /* FF3.6-15 */
-       background: -webkit-linear-gradient(45deg, var(--Primario)0%,var(--Primario-claro) 100%); /* Chrome10-25,Safari5.1-6 */
-       background: linear-gradient(45deg, var(--Primario) 0%,var(--Primario-claro) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-   }
-   .qc-action {
-       --Primario: <?php echo $primario; ?>;
-       background: var(--Primario);
+     background: var(--Primario);
+     background: -moz-linear-gradient(45deg, var(--Primario) 0%, var(--Primario-claro) 100%); /* FF3.6-15 */
+     background: -webkit-linear-gradient(45deg, var(--Primario)0%,var(--Primario-claro) 100%); /* Chrome10-25,Safari5.1-6 */
+     background: linear-gradient(45deg, var(--Primario) 0%,var(--Primario-claro) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+ }
+ .qc-action {
+     --Primario: <?php echo esc_html($primario); ?>;
+     background: var(--Primario);
 
-   }
-   .qc-action:hover {
-       --Primario-oscuro:<?php echo $primarioOscuro; ?>;
-       background: var(--Primario-oscuro);
+ }
+ .qc-action:hover {
+     --Primario-oscuro:<?php echo esc_html($primarioOscuro); ?>;
+     background: var(--Primario-oscuro);
 
-   }
+ }
 </style>
 <?php
 }
 
-add_action('wp_head', 'eqconnect_customize_css');
+add_action('wp_head', 'eqcn_customize_css');
 
-function eqconnect_public_scripts() {
+function eqcn_public_scripts() {
 
-   $phpmpurl= EQCONNECT_PLUGIN_URL; 
-   wp_register_style(
-    'gicon',
+ $phpmpurl= EQCONNECT_PLUGIN_URL; 
+ wp_register_style(
+    'eqcn_gicon',
     EQCONNECT_PLUGIN_URL . '/include/gicon/style.css'
 );
-   wp_enqueue_style( 'gicon' );
+ wp_enqueue_style( 'eqcn_gicon' );
 
-   wp_register_style(
-    'mybchat-public-css',
+ wp_register_style(
+    'eqcn-public-css',
     EQCONNECT_PLUGIN_URL . '/public/css/public.css'
 );
-   wp_enqueue_style( 'mybchat-public-css' );
+ wp_enqueue_style( 'eqcn-public-css' );
 }
 
 
 
-add_action( 'wp_enqueue_scripts', 'eqconnect_public_scripts' );
+add_action( 'wp_enqueue_scripts', 'eqcn_public_scripts' );
 
-function obtenerColorMasClaro($color, $ajuste) {
+function eqcn_obtenerColorMasClaro($color, $ajuste) {
     // Verifica si el color comienza con #
     if ($color[0] === '#') {
         // Convierte el color hexadecimal a RGB
@@ -160,7 +157,7 @@ function obtenerColorMasClaro($color, $ajuste) {
     return $color;
 }
 
-function obtenerColorMasOscuro($color, $ajuste) {
+function eqcn_obtenerColorMasOscuro($color, $ajuste) {
     // Verifica si el color comienza con #
     if ($color[0] === '#') {
         // Convierte el color hexadecimal a RGB

@@ -4,7 +4,7 @@
  *
  * @link              https://www.gorvet.com
  * @since             1.0.0
- * @package           Qconnect
+ * @package           EQConnect
  */
 
 if ( !defined( 'WP_UNINSTALL_PLUGIN' ) ) {
@@ -18,14 +18,14 @@ if ( !defined( 'WP_UNINSTALL_PLUGIN' ) ) {
  * antes de desinstalar el plugin para evitar borrar todos los datos del complemento.
  */
 
-if ( apply_filters( 'qconnect_delete_all', true ) ) {
+if ( apply_filters( 'eqconnect_delete_all', true ) ) {
 	global $wpdb;
 
-// Elimina la opción general 'qconnect' agregada por el complemento
-	delete_option( 'qconnect' );
+// Elimina la opción general 'eqconnect' agregada por el complemento
+	delete_option( 'eqconnect' );
     
-	// Delete post meta '_qconnect' added by plugin
-	$wpdb->delete( $wpdb->prefix . 'postmeta', array( 'meta_key' => '_qconnect' ) );
+	// Delete post meta '_eqconnect' added by plugin
+	$wpdb->delete( $wpdb->prefix . 'postmeta', array( 'meta_key' => '_eqconnect' ) );
 
 // Borra cualquier dato almacenado en caché que haya sido eliminado	
     wp_cache_flush();

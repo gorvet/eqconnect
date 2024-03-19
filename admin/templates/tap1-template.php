@@ -37,13 +37,13 @@
 			<input  class="" type="hidden"  name="eqcn_icocta1" id="eqcn_icocta1" value="<?php echo esc_attr(get_option('eqcn_icocta1'))  ?> ">
 
 
-			<input  class="ms-2 w-100" type="text"  name="eqcn_linkcta1" id="eqcn_linkcta1" value="<?php echo esc_attr(get_option('eqcn_linkcta1'))  ?>" placeholder="https://link.com">
+			<input  class="ms-2 w-100" type="text"  name="eqcn_linkcta1" id="eqcn_linkcta1" value="<?php echo sanitize_text_field(esc_attr(get_option('eqcn_linkcta1')))  ?>" placeholder="https://link.com">
 
 		</div>
 		
 		<div id="eqcn_wa1" class="my-2  ">
 			<label class="fw-bold d-none"><?php esc_html_e('Texto del CTA','eqconnect'); ?></label>
-			<input  class=" w-100 mt-1 " type="hidden"  name="eqcn_watext1" id="eqcn_watext1" value="<?php echo esc_attr(get_option('eqcn_watext1'))  ?>" placeholder="<?php esc_html_e('Hola quiero saber...','eqconnect'); ?>">
+			<input  class=" w-100 mt-1 " type="hidden"  name="eqcn_watext1" id="eqcn_watext1" value="<?php echo sanitize_text_field(esc_attr(get_option('eqcn_watext1')))  ?>" placeholder="<?php esc_html_e('Hola quiero saber...','eqconnect'); ?>">
 		</div>
 	</div>
 

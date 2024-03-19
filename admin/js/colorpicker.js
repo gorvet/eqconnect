@@ -1,7 +1,7 @@
 jQuery(document).ready(function($){ 
 
     var primario = jscolorprimario;
-    var primarioClaro = obtenerColorMasClaro(primario, .6);
+    var primarioClaro = eqcn_obtenerColorMasClaro(primario, .6);
     $('.qc').css({
         'background': primario,
         'background': '-moz-linear-gradient(45deg, ' + primario + ' 0%, ' + primarioClaro + ' 100%)',
@@ -9,12 +9,12 @@ jQuery(document).ready(function($){
         'background': 'linear-gradient(45deg, ' + primario + ' 0%,' + primarioClaro + ' 100%)'
     });
 
-    $('#qcprimario').wpColorPicker({
+    $('#eqcn_primario').wpColorPicker({
     defaultColor: true, 
     hide: true,
     change:function(event, ui) {
     var nuevoPrimario = ui.color.toString();
-    var nuevoprimarioClaro = obtenerColorMasClaro(nuevoPrimario, .6);
+    var nuevoprimarioClaro = eqcn_obtenerColorMasClaro(nuevoPrimario, .6);
     $('.qc').css({
         'background': nuevoPrimario,
         'background': '-moz-linear-gradient(45deg, ' + nuevoPrimario + ' 0%, ' + nuevoprimarioClaro + ' 100%)',
@@ -25,7 +25,7 @@ jQuery(document).ready(function($){
   }
 });
 
-function obtenerColorMasClaro(color, ajuste) {
+function eqcn_obtenerColorMasClaro(color, ajuste) {
     // Convierte el color hexadecimal a RGB
     var r = parseInt(color.substring(1, 3), 16);
     var g = parseInt(color.substring(3, 5), 16);

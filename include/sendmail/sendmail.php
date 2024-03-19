@@ -1,52 +1,48 @@
-<?php defined( 'ABSPATH' ) || die(); ?>
-<?php
-require_once('../../../../../wp-load.php');
-function validar_campos($campo)
-{
-    $campo = trim($campo);
-    $campo = stripslashes($campo);
-    $campo = htmlspecialchars($campo);
-    return $campo;
-}
+<?php defined( 'ABSPATH' ) || die(); 
 
-header('Content-type: application/json');
+function eqcn_process_sendmail(){
+        $nonce=$_POST['nonce']??'';
 
-if (
-    !empty($_POST["subscriber_name"]) &&
-    !empty($_POST["subscriber_email"]) &&
-    !empty($_POST["subscriber_message"])
-) {
-    $destinoMail = "gconnect@gorvet.com";
-    $subscriber_name = substr(validar_campos($_POST["subscriber_name"]), 0, 100);
-    $subscriber_email = filter_var(validar_campos($_POST["subscriber_email"]), FILTER_SANITIZE_EMAIL);
-
-    if (!filter_var($subscriber_email, FILTER_VALIDATE_EMAIL)) {
-        echo json_encode("correo_invalido");
+    if (!wp_verify_nonce($nonce, 'eqcn_nonce')) {
+        $res=['status'=>0, 'msg'=>'Error de validación nonce'];
+        wp_send_json($res);
         exit;
     }
 
-    $subscriber_message = validar_campos($_POST["subscriber_message"]);
-
-    $contenido = "Nombre: " . $subscriber_name . "\n";
-    $contenido .= "Correo: " . $subscriber_email . "\n";
-    $contenido .= "Mensaje: " . $subscriber_message;
-
- 
-    // Obtén la dirección de correo electrónico del administrador de WordPress
-    $admin_email = get_option('admin_email');
-    //$admin_email = $subscriber_email;
+    $name= sanitize_text_field($_POST['name']??'');
+    $email=sanitize_email($_POST['email']??'');
+    $msg=sanitize_textarea_field($_POST['msg']??'');
 
 
-    $cabecera = 'From: ' . $admin_email . "\r\n" .
-                'Reply-To: ' . $subscriber_email;
+    if (!empty($name) && !empty($email) && !empty($msg)) {
 
-    if (mail($destinoMail, "Desde GConnect", $contenido, $cabecera)) {
-        echo json_encode("ok");
-    } else {
-        echo json_encode("error_envio");
+        $destinoMail = "eqconnect@gorvet.com";
+
+        $contenido = "Nombre: " . $name . "\n";
+        $contenido .= "Correo: " . $email . "\n";
+        $contenido .= "Mensaje: " . $msg;
+
+// Obtén la dirección de correo electrónico del administrador de WordPress
+        $admin_email = get_option('admin_email');
+
+        $cabecera = 'From: ' . $admin_email . "\r\n" .
+        'Reply-To: ' . $email;
+
+        if (wp_mail($destinoMail, "Desde Easy Quick Connect", $contenido, $cabecera)) {
+            $res=['status'=>1, 'msg'=>'Mensaje enviado'];
+        } else {
+            $res=['status'=>0, 'msg'=>'Error al enviar el mensaje'];
+        }
+
+        wp_send_json($res);
+
+    } else{
+        $res=['status'=>0, 'msg'=>'Campos vacíos'];
+        wp_send_json($res);
+        exit;
     }
 
-    exit;
 }
 
-echo json_encode("campos_vacios");
+add_action('wp_ajax_eqcn_sendmail','eqcn_process_sendmail');
+

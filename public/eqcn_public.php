@@ -72,7 +72,7 @@ add_action('wp_footer', 'eqcn_front_code');
 // personalizamos la burbuja
 function eqcn_customize_css()
 {
-    $primario = esc_attr(get_option('qcprimario'));
+    $primario = esc_attr(get_option('eqcn_primario'));
     $primarioClaro = eqcn_obtenerColorMasClaro($primario,0.6);
     
     $primarioOscuro = eqcn_obtenerColorMasOscuro($primario,0.2);

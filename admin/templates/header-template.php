@@ -16,7 +16,7 @@ $cta_options = array(//nonbre de los iconos en mi tipografia de iconos
 ?>
 <div class="qcheader" >
 	<img class="qconnectlogo" src="<?php echo  esc_url(EQCONNECT_PLUGIN_URL .  'admin/img/eqconnectlogo.png')?>">
-	<p><?php esc_html_e('Gracias por usar','eqconnect'); ?><strong> QuickConnect</strong>, <?php esc_html_e('Comencemos a configurarlo para su mejor funcionamiento. No te olvides de guardar los cambios al finalizar ;-)','eqconnect') ?></p>
+	<p><?php esc_html_e('Gracias por usar','eqconnect'); ?><strong> Easy Quick Connect</strong>, <?php esc_html_e('Comencemos a configurarlo para su mejor funcionamiento. No te olvides de guardar los cambios al finalizar ;-)','eqconnect') ?></p>
 
 </div>
 

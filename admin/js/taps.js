@@ -4,8 +4,8 @@
   $(window).on('load',function() {
 
 var selectedValue
- showWhatapp(1,$("#eqcn_icocta1").attr("value"))
-	//When page loads...
+showWhatapp(1,$("#eqcn_icocta1").attr("value"))
+
  $(".tab-pane").removeClass("hide");
 
  if (!$("#giconCta1").hasClass("gicon-whatsapp")) {
@@ -45,7 +45,7 @@ var selectedValue
       showWhatapp(tap,$("#eqcn_icocta"+tap).attr("value"))
     }
     
-    return false;  
+    //return false;  
 
 	});
 
@@ -90,13 +90,13 @@ function showWhatapp(i,value){
   //console.log("selectIcon"+ i + " a= " + selectedValue)
 
    if (selectedValue=='whatsapp'|| selectedValue=='phone') {
-    $("#eqcn_linkcta" + i).removeAttr("placeholder").attr("placeholder", "535xxxxxxx").attr("type", "tel");
+    $("#eqcn_linkcta" + i).removeAttr("placeholder").attr("placeholder", "535xxxxxxx")//.attr("type", "tel");
   }
   else if (selectedValue=='mail') {
-    $("#eqcn_linkcta" + i).removeAttr("placeholder").attr("placeholder", "nombre@ejemplo.com").attr("type", "mail");
+    $("#eqcn_linkcta" + i).removeAttr("placeholder").attr("placeholder", "nombre@ejemplo.com")//.attr("type", "mail");
   }
   else {
-    $("#eqcn_linkcta" + i).removeAttr("placeholder").attr("placeholder", "https://link.com").attr("type", "url");
+    $("#eqcn_linkcta" + i).removeAttr("placeholder").attr("placeholder", "https://link.com")//.attr("type", "url");
   }
 
   if (selectedValue!='whatsapp') {

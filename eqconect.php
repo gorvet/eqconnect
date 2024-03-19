@@ -28,4 +28,4 @@ define( 'EQCONNECT_PLUGIN_FILE', __FILE__ );
 
 require_once EQCONNECT_DIR . 'admin/eqcn_admin.php';
 require_once EQCONNECT_DIR . 'public/eqcn_public.php'; 
-//require_once EQCONNECT_DIR . 'include/sendmail/sendmail.php';
+require_once EQCONNECT_DIR . 'include/sendmail/sendmail.php';

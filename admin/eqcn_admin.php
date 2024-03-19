@@ -3,7 +3,7 @@
 
 defined( 'ABSPATH' ) || die();
 
-/*Configuración de opciones de administración para QConnect. */
+/*Configuración de opciones de administración para EQConnect. */
 
 function eqcn_admin_setup() {
     // Agrega la página al menú del administrador de WordPress.
@@ -32,8 +32,7 @@ function eqcn_admin_setup() {
 	register_setting('eqconnect', 'eqcn_watext4');
 
  	register_setting('eqconnect', 'eqcn_primario');
-	register_setting('eqconnect', 'eqcn_primario_claro');
-	register_setting('eqconnect', 'eqcn_primario_oscuro');
+
 
 }
 
@@ -50,7 +49,7 @@ function eqcn_settings()
 	include EQCONNECT_DIR . 'admin/templates/tap4-template.php';
 	include EQCONNECT_DIR . 'admin/templates/tap6-template.php';
 	include EQCONNECT_DIR . 'admin/templates/footer-template.php';	
-	//include EQCONNECT_DIR . 'admin/templates/side-template.php';	
+	include EQCONNECT_DIR . 'admin/templates/side-template.php';	
 
 }
 
@@ -58,7 +57,7 @@ function eqcn_settings()
 function eqcn_admin_scripts() {
 
 	$phpmpurl= esc_html(EQCONNECT_PLUGIN_URL);
-	$colorprimario= esc_attr(get_option('qcprimario'));
+	$colorprimario= esc_attr(get_option('eqcn_primario'));
 	?>
 	<script >
 		window.jsmpurl = "<?php echo esc_html($phpmpurl) ;?>";
@@ -69,54 +68,55 @@ function eqcn_admin_scripts() {
 
      if ( is_admin() ) {
 
-		wp_enqueue_media(); // Carga la API de JavaScript para utilizar wp.media.
 		wp_register_script(
-			'eqconnect-image-meta-box',
-			EQCONNECT_PLUGIN_URL . 'admin/js/img.js',
-			array( 'jquery' )
-		);
-		wp_enqueue_script( 'eqconnect-image-meta-box' );
-
-		wp_register_script(
-			'eqconnect-sidebar',
+			'eqcn-sidebar',
 			EQCONNECT_PLUGIN_URL . 'admin/js/sidebar.js',
-			array( 'jquery' )
+			array( 'jquery' ),
+			'1.2',
 		);
-		wp_enqueue_script( 'eqconnect-sidebar' );
-
-		/*wp_register_script(
-			'eqconnect-feed',
-			EQCONNECT_PLUGIN_URL . 'include/sendmail/ajax.js',
-			array( 'jquery' )
-		);
-		wp_enqueue_script( 'eqconnect-feed' ); */
+		wp_enqueue_script( 'eqcn-sidebar' );
 
 		wp_register_script(
-			'bcbootstrap.bundle',
+			'eqcn-sendmail',
+			EQCONNECT_PLUGIN_URL . 'include/sendmail/sendmail.js',
+			array( 'jquery' ),
+			'1.2',
+		);
+		wp_localize_script('eqcn-sendmail','eqcn_object',array(
+			'url'=>admin_url('admin-ajax.php'),
+			'nonce'=>wp_create_nonce('eqcn_nonce'),
+			'hook'=>'eqcn_sendmail',
+		));
+		wp_enqueue_script( 'eqcn-sendmail' ); 
+
+		wp_register_script(
+			'eqcn-bootstrap-bundle',
 			EQCONNECT_PLUGIN_URL . 'include/bootstrap/bootstrap.bundle.js',
-			array( 'jquery' )
+			array( 'jquery' ),
+			'1.2',
 		);
-		wp_enqueue_script( 'bcbootstrap.bundle' );
+		wp_enqueue_script( 'eqcn-bootstrap-bundle' );
 
 
 		wp_register_script(
-			'eqconnect-taps',
+			'eqcn-taps',
 			EQCONNECT_PLUGIN_URL . 'admin/js/taps.js',
-			array( 'jquery' )
+			array( 'jquery' ),
+			'1.2',
 		);
-		wp_enqueue_script( 'eqconnect-taps' );
+		wp_enqueue_script( 'eqcn-taps' );
 
 
-		wp_enqueue_script( 'eqconnect-colorpicker', EQCONNECT_PLUGIN_URL . 'admin/js/colorpicker.js', array( 'wp-color-picker' ), false, true );
+		wp_enqueue_script( 'eqcn-colorpicker', EQCONNECT_PLUGIN_URL . 'admin/js/colorpicker.js', array( 'wp-color-picker' ), false, true );
 		wp_enqueue_style( 'wp-color-picker' );
-		wp_enqueue_style( 'eqconnect-colorpicker-css' );
+		wp_enqueue_style( 'eqcn-colorpicker-css' );
 
 
 		wp_register_style(
-			'eqcn-eqconnect-admin-css',
+			'eqcn-admin-css',
 			EQCONNECT_PLUGIN_URL . 'admin/css/admin.css'
 		);
-		wp_enqueue_style( 'eqcn-eqconnect-admin-css' );
+		wp_enqueue_style( 'eqcn-admin-css' );
 
 		wp_register_style(
 			'eqcn-bootstrap-utilities-css',

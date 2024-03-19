@@ -7,7 +7,7 @@
     event.preventDefault(); // Evitar que se añada # a la URL
       activateLink($(this));
       hideElement("#feedback-donate");
-      showElement("#qcsendmail");
+      showElement("#eqcn_sendmail");
       showElement("#feedback-submit");
       showElement("#feedback-cancel");
       resetFormFields();
@@ -18,7 +18,7 @@
     event.preventDefault(); // Evitar que se añada # a la URL
       activateLink($(this));
       hideElement("#feedback-donate");
-      showElement("#qcsendmail");
+      showElement("#eqcn_sendmail");
       showElement("#feedback-submit");
       showElement("#feedback-cancel");
       resetFormFields();
@@ -30,7 +30,7 @@
     event.preventDefault(); // Evitar que se añada # a la URL
       activateLink($(this));
       showElement("#feedback-donate");
-      hideElement("#qcsendmail");
+      hideElement("#eqcn_sendmail");
       hideElement("#feedback-submit");
       hideElement("#feedback-cancel");
       resetFormFields();
@@ -40,7 +40,7 @@
     event.preventDefault(); // Evitar que se añada # a la URL
       deactivateLinks();
       hideElement("#feedback-donate");
-      hideElement("#qcsendmail");
+      hideElement("#eqcn_sendmail");
       hideElement("#feedback-submit");
       hideElement("#feedback-cancel");
       resetFormFields();

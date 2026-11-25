@@ -2,9 +2,9 @@
 Contributors: jgorvet 
 Donate link: https://www.gorvet.com/
 Tags: Tags: chat, click to chat, support button, float contact, WhatsApp, Telegram, phone, email
-Requires at least:6
+Requires at least: 6.0
 Tested up to: 6.4.2
-Stable tag: 1.2
+Stable tag: 1.2.1
 Requires PHP: 8.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -28,8 +28,12 @@ Puedes configurar hasta 4 llamadas de acción en la burbuja de contacto para ada
 Puedes personalizar el color de la burbuja de contacto según la identidad de tu marca en la sección de configuración del plugin.
 
 = ¿El plugin funciona en versiones antiguas de WordPress? =
-El plugin requiere al menos WordPress 5.6 para funcionar correctamente. Asegúrate de tener una versión actualizada de WordPress para aprovechar todas las funciones del plugin.
+El plugin requiere al menos WordPress 6.0 para funcionar correctamente. Asegúrate de tener una versión actualizada de WordPress para aprovechar todas las funciones del plugin.
 
+
+= ¿Cómo se actualiza el plugin? =
+WordPress consulta el manifiesto de EQConnect en https://repo.gorvet.com/updates/eqconnect/info.json.
+Activa las actualizaciones automáticas en la fila de Easy Quick Connect de la pantalla Plugins.
 
 == Screenshots ==
 
@@ -38,6 +42,9 @@ El plugin requiere al menos WordPress 5.6 para funcionar correctamente. Asegúra
 3. El funcionamiento
 
 == Changelog ==
+= 1.2.1 =
+* El cargador, la administración, la burbuja de contacto y el envío de comentarios funcionan en módulos separados.
+* WordPress puede buscar e instalar actualizaciones desde el repositorio de Gorvet.
 = 1.1 =
 * Mejoras en la personalización de formas de contacto.
 * Correcciones de errores.

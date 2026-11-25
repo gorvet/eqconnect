@@ -1,6 +1,6 @@
 jQuery(document).ready(function($){ 
 
-    var primario = jscolorprimario;
+    var primario = $('#eqcn_primario').val() || '#4A85FE';
     var primarioClaro = eqcn_obtenerColorMasClaro(primario, .6);
     $('.qc').css({
         'background': primario,
@@ -26,6 +26,9 @@ jQuery(document).ready(function($){
 });
 
 function eqcn_obtenerColorMasClaro(color, ajuste) {
+    if (color.length === 4) {
+        color = color.replace(/^#(.)(.)(.)$/, "#$1$1$2$2$3$3");
+    }
     // Convierte el color hexadecimal a RGB
     var r = parseInt(color.substring(1, 3), 16);
     var g = parseInt(color.substring(3, 5), 16);
